@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Period Calculator — Predict Your Next Period Date | Tabutility</title>
+  <meta name="description" content="Predict your next period date and track your menstrual cycle. Enter your last period date and average cycle length to see your next 6 periods. Free period calculator."/>
+  <link rel="canonical" href="https://period-calculator.tabutility.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://period-calculator.tabutility.com/"/>
+  <meta property="og:title" content="Period Calculator — Predict Your Next Period Date"/>
+  <meta property="og:description" content="Predict your next period and track your menstrual cycle. Free, private, no sign-up."/>
+  <meta property="og:site_name" content="Tabutility"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩸</text></svg>"/>
+  <meta name="theme-color" content="#1a1a2e"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Period Calculator","url":"https://period-calculator.tabutility.com/","description":"Predict your next period date and track your menstrual cycle.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"Tabutility","url":"https://tabutility.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I predict my next period?","acceptedAnswer":{"@type":"Answer","text":"Enter the first day of your last period and your average cycle length. The calculator will predict your next 6 period start dates."}},{"@type":"Question","name":"What is the average menstrual cycle length?","acceptedAnswer":{"@type":"Answer","text":"The average menstrual cycle is 28 days, but a normal cycle can range from 21 to 35 days."}},{"@type":"Question","name":"Is this calculator private?","acceptedAnswer":{"@type":"Answer","text":"Yes — all calculations happen in your browser. No data is stored or sent anywhere."}}]}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7039091592734005" crossorigin="anonymous"></script>
+  <script>window.addEventListener('load',function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-78VZWJ5B1W');});</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+    a{color:#e11d48;text-decoration:none}
+    nav{background:#1a1a2e;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .nav-brand{color:#fff;font-size:18px;font-weight:800}
+    .nav-links a{color:rgba(255,255,255,0.8);font-size:14px;margin-left:20px;font-weight:500}
+    .hero{background:linear-gradient(135deg,#881337,#e11d48);color:#fff;padding:40px 20px 32px;text-align:center}
+    .hero h1{font-size:clamp(24px,4vw,38px);font-weight:900;margin:0 0 10px}
+    .hero p{color:rgba(255,255,255,0.85);margin:0;font-size:16px}
+    .wrap{max-width:680px;margin:0 auto;padding:32px 20px 60px}
+    .card{background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.07);margin-bottom:24px;border:1.5px solid #e8ecf2}
+    .card h2{font-size:18px;font-weight:800;margin:0 0 20px}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:500px){.row2{grid-template-columns:1fr}}
+    label{display:block;font-size:13px;font-weight:600;color:#64748b;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.4px}
+    input[type=date],input[type=number]{width:100%;padding:12px 14px;border:2px solid #e2e8f0;border-radius:10px;font-size:16px;font-weight:600;color:#1e293b;background:#f8fafc;outline:none;transition:border 0.2s}
+    input:focus{border-color:#e11d48;background:#fff}
+    .btn{width:100%;padding:14px;background:#e11d48;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;transition:background 0.2s}
+    .btn:hover{background:#be123c}
+    .cycle-list{list-style:none;margin:0;padding:0}
+    .cycle-item{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:12px;margin-bottom:10px;border:1.5px solid #fecdd3;background:#fff1f2}
+    .cycle-item.next{background:linear-gradient(135deg,#e11d48,#be123c);color:#fff;border-color:transparent}
+    .cycle-item.next .cycle-sub{color:rgba(255,255,255,0.8)}
+    .cycle-num{font-size:13px;font-weight:700;color:#e11d48;background:#fecdd3;border-radius:6px;padding:3px 10px;white-space:nowrap}
+    .cycle-item.next .cycle-num{background:rgba(255,255,255,0.2);color:#fff}
+    .cycle-date{font-size:17px;font-weight:800}
+    .cycle-sub{font-size:13px;color:#64748b;margin-top:2px}
+    .fertile-window{background:#fdf4ff;border:1.5px solid #e9d5ff;border-radius:12px;padding:16px;margin-top:16px}
+    .fertile-title{font-size:14px;font-weight:700;color:#7c3aed;margin-bottom:8px}
+    .fertile-dates{font-size:15px;font-weight:600;color:#1e293b}
+    .privacy-note{background:#f0fdf4;border-left:4px solid #22c55e;border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;color:#166534;margin-top:16px}
+    .ad-wrap{margin:20px 0;text-align:center;min-height:90px;background:#f8fafc;border-radius:8px}
+    footer{background:#1a1a2e;color:rgba(255,255,255,0.6);text-align:center;padding:24px 20px;font-size:14px}
+    footer a{color:#f9a8d4}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="https://tabutility.com" class="nav-brand">⚡ Tabutility</a>
+  <div class="nav-links">
+    <a href="https://tabutility.com">All Tools</a>
+    <a href="https://tabutility.com/blog/">Blog</a>
+  </div>
+</nav>
+<div class="hero">
+  <h1>🩸 Period Calculator</h1>
+  <p>Predict your next period and track your cycle — private, instant, free</p>
+</div>
+<div class="wrap">
+  <div class="card">
+    <h2>Your Cycle Details</h2>
+    <div class="row2">
+      <div>
+        <label>First Day of Last Period</label>
+        <input type="date" id="last-period" oninput="calc()"/>
+      </div>
+      <div>
+        <label>Average Cycle Length (days)</label>
+        <input type="number" id="cycle-length" value="28" min="21" max="45" oninput="calc()"/>
+      </div>
+    </div>
+    <div class="row2" style="margin-top:16px">
+      <div>
+        <label>Period Duration (days)</label>
+        <input type="number" id="period-duration" value="5" min="1" max="10" oninput="calc()"/>
+      </div>
+      <div></div>
+    </div>
+    <div class="privacy-note">🔒 All calculations happen in your browser. Nothing is stored or shared.</div>
+  </div>
+
+  <div id="results" style="display:none">
+    <div class="card">
+      <h2>Your Next 6 Periods</h2>
+      <ul class="cycle-list" id="cycle-list"></ul>
+      <div class="fertile-window" id="fertile-window"></div>
+    </div>
+  </div>
+
+  <div class="ad-wrap">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <div class="card">
+    <h2>About This Calculator</h2>
+    <p style="font-size:15px;color:#475569;margin:0 0 12px">This calculator predicts your next period based on a regular cycle length. The average cycle is 28 days, but normal cycles range from 21–35 days. Your fertile window is typically Days 10–17 of your cycle (around ovulation at Day 14 for a 28-day cycle).</p>
+    <p style="font-size:13px;color:#94a3b8;margin:0">This tool is for general tracking only. For medical advice, speak with your healthcare provider.</p>
+  </div>
+</div>
+<footer>
+  <p>© 2025 <a href="https://tabutility.com">Tabutility</a> — Free Online Tools</p>
+</footer>
+<script>
+  // Set default last period to ~1 cycle ago
+  const lp = new Date(); lp.setDate(lp.getDate()-14);
+  document.getElementById('last-period').value = lp.toISOString().split('T')[0];
+  calc();
+
+  function calc(){
+    const lpVal = document.getElementById('last-period').value;
+    const cycleLen = parseInt(document.getElementById('cycle-length').value)||28;
+    const duration = parseInt(document.getElementById('period-duration').value)||5;
+    if(!lpVal) return;
+
+    const start = new Date(lpVal);
+    const today = new Date(); today.setHours(0,0,0,0);
+    const list = document.getElementById('cycle-list');
+    list.innerHTML='';
+
+    // Find next 6 periods
+    const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const fmtDate = d => `${DAYS[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+    const addDays = (d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x;};
+
+    let periods=[];
+    // Go forward enough cycles to get 6 future ones
+    for(let i=1;i<=20;i++){
+      const pd=addDays(start,i*cycleLen);
+      if(pd>=today) periods.push(pd);
+      if(periods.length>=6) break;
+    }
+
+    periods.forEach((pd,idx)=>{
+      const end=addDays(pd,duration-1);
+      const daysUntil=Math.round((pd-today)/86400000);
+      const li=document.createElement('li');
+      li.className='cycle-item'+(idx===0?' next':'');
+      const badge=idx===0?'<span class="cycle-num">Next period</span>':'<span class="cycle-num">Period '+(idx+1)+'</span>';
+      const sub=idx===0?(daysUntil===0?'Starting today':daysUntil===1?'Tomorrow':`In ${daysUntil} days`):`${fmtDate(end)}`;
+      li.innerHTML=`<div><div class="cycle-date">${fmtDate(pd)}</div><div class="cycle-sub">${idx===0?sub:'Ends: '+sub}</div></div>${badge}`;
+      list.appendChild(li);
+    });
+
+    // Fertile window for next cycle
+    if(periods.length>0){
+      const nextStart=periods[0];
+      const ovulation=addDays(nextStart,cycleLen-14);
+      const fertileStart=addDays(ovulation,-5);
+      const fertileEnd=addDays(ovulation,1);
+      document.getElementById('fertile-window').innerHTML=
+        `<div class="fertile-title">🌸 Estimated fertile window (next cycle)</div>
+         <div class="fertile-dates">${fmtDate(fertileStart)} — ${fmtDate(fertileEnd)}</div>
+         <div style="font-size:12px;color:#64748b;margin-top:6px">Estimated ovulation: ${fmtDate(ovulation)}</div>`;
+    }
+
+    document.getElementById('results').style.display='block';
+  }
+</script>
+</body>
+</html>
